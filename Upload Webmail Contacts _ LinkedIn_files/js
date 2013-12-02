@@ -1,0 +1,814 @@
+LI.ZeppelinForm=function(X,N){if(LI.__HPA===true){LI.log("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/zeppelin/ZepplinForm.js ")
+}var N={passwordResolutionUrl:N.passwordResolutionUrl||"",formID:N.formID||"nwmi-form",formImportMessageID:N.formImportMessageID||"import_msg",formEmailInputID:N.formEmailInputID||"email-nWMIForm",formEmailInputName:N.formEmailInputName||"",formEmailProgressID:N.formEmailProgressID||"wmi_progress",formPasswordDivID:N.formPasswordDivID||"pswd-div",formUsernameDivID:N.formUsernameDivID||"email-username",formSubmitButtonID:N.formSubmitButtonID||"resolve-btn",webmailAddrElId:N.webmailAddrElId||"webmail-addr",formDisclaimerMessageID:N.formDisclaimerMessageID||"disclaimer_msg",openInPopup:N.openInPopup||false,popupUrl:N.popupUrl||"",successUrl:N.successUrl||"",newGoBackValue:N.newGoBackValue||null,successMonitorUrl:N.successMonitorUrl||null,authOnlySuccessUrl:N.authOnlySuccessUrl||"",controlNameOverride:N.controlNameOverride||null,progressMessage:N.progressMessage||"",errorMessage:N.errorMessage||null,invalidEmailMessage:N.invalidEmailMessage||"",generalErrorMessage:N.generalErrorMessage||"",invalidLoginMessage:N.invalidLoginMessage||"",unsupportedEmailTypeMessage:N.unsupportedEmailTypeMessage||"",loginLimitMessage:N.loginLimitMessage||"",noContactsReturnedMessage:N.noContactsReturnedMessage||"",webmailUrlErrorMessage:N.webmailUrlErrorMessage||"",userEnteredWebmailUrlErrorMessage:N.userEnteredWebmailUrlErrorMessage||"",quickResolveDomains:{},domainPopupSizes:{"hotmail.com":{width:905,height:580},"live.com":{width:905,height:580},"msn.com":{width:905,height:580},"aol.com":{width:520,height:315},"default":{width:790,height:580}},exception:{},isPromo:N.isPromo||false,providerNameFieldID:N.providerNameFieldID||"",providerNameFieldName:N.providerNameFieldName||"",importerNameFieldID:N.importerNameFieldID||"",importerNameFieldName:N.importerNameFieldName||"",useGenieFieldID:N.useGenieFieldID||"",useGenieFieldName:N.useGenieFieldName||"",useZeppelinXFieldName:N.useZeppelinXFieldName||"",defaultProviderFieldName:N.defaultProviderFieldName||"",usernameFieldId:N.usernameFieldId||"",usernameFieldName:N.usernameFieldName||"",originNameFieldName:N.originNameFieldName||"",referrerFieldName:N.referrerFieldName||"referrer_alias",hasWebmailField:N.hasWebmailField||false,fandangoParam:N.fandangoParam||"fandango",importerProviderParam:N.importerProviderParam||"importerProvider",authOnly:N.authOnly||false,formTarget:N.formTarget||"zeppelin_popup",eventNotify:N.eventNotify||false,hidePopupForExchangeIMAP:N.hidePopupForExchangeIMAP||false,userEnteredEmailTrackingCode:N.userEnteredEmailTrackingCode||"",userChangedEmailTrackingCode:N.userChangedEmailTrackingCode||"",webmailURLPromptedTrackingCode:N.webmailURLPromptedTrackingCode||"",extraParamsFunc:N.extraParamsFunc||null,hidePasswordInit:N.hidePasswordInit||false,externalErrContainerId:N.externalErrContainerId||"",skipInitialResolve:N.skipInitialResolve||false,origins:N.origins||[],isNewAddConnectionsFlow:N.isNewAddConnectionsFlow||false,isGlobalNav:N.isGlobalNav||false},Z=null,s=null,E="",d="",ab=N.domainPopupSizes,u=ab["default"],J=u.width,S=u.height,e=new YAHOO.util.CustomEvent("error"),Q=new YAHOO.util.CustomEvent("emailResolved"),b=new YAHOO.util.CustomEvent("displayMsg"),l=YDom.get(N.formID),y=YDom.get(N.externalErrContainerId),L=Y$(".alt_unsupported_msg",y?y:l,true),O=YDom.get(N.formSubmitButtonID),aa=YDom.get(N.formImportMessageID),t=(N.formEmailInputName)?l[N.formEmailInputName]:YDom.get(N.formEmailInputID),G=(t)?t.value:"",M=YDom.getElementsByClassName("username-suggestion"),g=null,ac=(N.formEmailInputName)?l[N.formEmailInputName]:YDom.get(N.formEmailInputID),H=YDom.get(N.formPasswordDivID),m=Y$("input",H,true),h=YDom.get(N.webmailAddrElId),B=Y$("input",h,true),n=YDom.get("promo-subhead")||null,r=YDom.get("zeppelin-loading"),i="loading",W="error",U=false,R=("placeholder" in document.createElement("input")),I,T,z,c,w,f,v;
+N.useZeppelinXFieldNameOld=(N.useZeppelinXFieldName?N.useZeppelinXFieldName.replace("_","-"):"");
+N.originNameFieldNameOld=(N.originNameFieldName?N.originNameFieldName.replace("_","-"):"");
+if(N.newGoBackValue){f=new RegExp("[\\?&]goback=%2E([^&#]*)");
+v=f.exec(N.successUrl);
+N.successUrl=N.successUrl.replace(v[1],N.newGoBackValue)
+}function k(){g=window.open("#",N.formTarget,"width="+J+",height="+S+",toolbar=0,location=0,toolbar=0,status=0,scrollbars=no")
+}function a(ad){var ae=ad.split("@")[1];
+if(ab[ae]){J=ab[ae].width;
+S=ab[ae].height
+}else{J=u.width;
+S=u.height
+}}function F(ad){var ae=ad.value;
+if(!ae||(!R&&ae===ad.getAttribute("data-placeholder"))){setTimeout(function(){O.disabled=true
+},0);
+return false
+}return true
+}YEvent.on(M,"click",function(ad){var af=YDom.get(N.formUsernameDivID),ae=Y$("input",af,true);
+if(af&&YDom.getStyle(af,"display")!=="none"){if(ae){ae.value=this.innerHTML
+}YDom.removeClass(af,"hidden")
+}});
+var D=false;
+YEvent.on(l,"submit",function(ad){var ak=Y$(".submit-spinner",l,true),af=ac.value;
+if(D){YEvent.stopEvent(ad);
+return
+}D=true;
+setTimeout(function(){D=false
+},3000);
+if(!ac.value){YEvent.stopEvent(ad);
+return
+}if(N.eventNotify){LI.ZeppelinFormInstance=null
+}else{var aj=LI.Controls.getControl(l,N.controlNameOverride||"LI.ZeppelinForm");
+LI.ZeppelinFormInstance=aj
+}var ae,ah=l[N.originNameFieldName];
+if(ah){ae=ah.value
+}var ag=LI.Controls.getControl("addconnpolling","AddConnPolling");
+if(!N.hidePopupForExchangeIMAP||(ae!=="webmailImportExchange"&&ae!=="webmailImportIMAP"&&!(YDom.hasClass(l,"async")))){YDom.setAttribute(l,"target",N.formTarget);
+k()
+}else{YDom.setAttribute(l,"target","LI_ifrm_abook_import_form_"+ae);
+if(ag){ag.addAsync(ae);
+ag.startAsyncTimer(ae)
+}O.disabled=true;
+if(ak){YDom.addClass(ak,"show");
+if(LI.Events){var ai=function(){O.disabled=false;
+YDom.removeClass(ak,"show");
+LI.Events.unbind("add-conn-import-error",ai)
+};
+LI.Events.bind("add-conn-import-error",ai)
+}}}LI.clearFormErrors(X);
+aa.innerHTML="";
+if(WebTracking){if(N.userEnteredEmailTrackingCode&&(G!=="")&&G!==af){WebTracking.trackUserAction(N.userEnteredEmailTrackingCode,{email:af,origin:ae})
+}else{WebTracking.trackUserAction("fetch_import_start",{email:af,origin:ae})
+}}});
+YEvent.on(window,"unload",function(){if(g){g.close()
+}});
+w=N.extraParamsFunc||function(){return""
+};
+if(!N.isPromo){var q=null;
+var I=function(ad){if(!ad||ad.value===E){return
+}if(s!=null){window.clearTimeout(s);
+s=null
+}if(Z!=null){window.clearInterval(Z);
+Z=null
+}if(!ad.value){O.disabled=true
+}E=YAHOO.lang.trim(ad.value);
+if(!q){q=/^([a-zA-Z0-9_\-=\.\'\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,10}|[0-9]{1,3})(\]?)$/i
+}if(E.match(q)){Z=window.setInterval(function(){if(E===d){T(N)
+}else{d=E
+}},500)
+}else{if(E.length>1){s=window.setTimeout(function(){var ae=N.invalidEmailMessage;
+YDom.addClass(ad,W);
+c(ae,false,N);
+if(U){YDom.removeClass(r,i);
+U=false
+}},5000)
+}else{if(U){YDom.removeClass(r,i);
+U=false
+}return
+}}if(!U){YDom.addClass(r,i);
+U=true
+}O.disabled=true
+};
+T=function(){var af,ad,ai,aj;
+LI.clearFormErrors(X);
+if(L){YDom.addClass(L,"hidden")
+}if(Z!=null){window.clearInterval(Z);
+Z=null
+}aa.innerHTML="";
+YDom.removeClass(ac,W);
+var ah=E.split("@")[1];
+if(N.quickResolveDomains[ah]){af=N.quickResolveDomains[ah].domain;
+ad=N.quickResolveDomains[ah].passwordRequired
+}a(E);
+function ae(ak){ag(ak.responseText)
+}function ag(ak){var ay,az,aB,at,av,an,ar=false,am=E,aC=ak.origin,aA=l[N.originNameFieldName],al=l[N.originNameFieldNameOld],aq=YDom.get(N.formUsernameDivID),ap=(N.useGenieFieldName)?l[N.useGenieFieldName]:YDom.get(N.useGenieFieldID),aw=l[N.useZeppelinXFieldName],au=l[N.useZeppelinXFieldNameOld];
+N.isEmailChanged=false;
+if(s!=null){window.clearTimeout(s)
+}if(U){YDom.removeClass(r,i);
+U=false
+}var ao=(N.importerNameFieldName)?l[N.importerNameFieldName]:YDom.get(N.importerNameFieldID),ax=(N.providerNameFieldName)?l[N.providerNameFieldName]:YDom.get(N.providerNameFieldID);
+if(ao){if(ak.importerName){ao.value=ak.importerName
+}else{ao.value=""
+}}if(ax){if(ak.providerName){ax.value=ak.providerName
+}else{ax.value=""
+}}if(ak.error){WebTracking.trackUserAction("email-resolution-response-error");
+c(N.generalErrorMessage)
+}if(ak.email!==am){return
+}if(ak.origin!==undefined){if(aA){aA.value=aC;
+if(al){al.value=aC
+}}if(N.formUsernameDivID){if(aq){if(aC==="webmailImportExchange"){YDom.removeClass(aq,"hidden");
+LI.show(aq)
+}else{YDom.addClass(aq,"hidden");
+LI.hide(aq)
+}}}}if(N.isNewAddConnectionsFlow){aB=N.formID;
+if(aB&&(an=aB.lastIndexOf("-"))!==-1){av=aB.substring(an+1)
+}if(av!==ak.origin&&aB.indexOf(ak.origin)===-1){if(av!=="anyemail"){ar=true
+}else{for(ay=0,az=N.origins.length;
+ay<az;
+ay++){if(ak.origin===N.origins[ay]){ar=true;
+break
+}}}}}if(!(at=YDom.get("reimport-check-"+aC))){at=YDom.get("reimport-check-x-anyemail")
+}if(N.isNewAddConnectionsFlow){if(!ar){if(ak.passwordRequired){LI.show(H);
+LI.hide(at);
+YDom.addClass(l,"async");
+if(ap){ap.value=false
+}}else{LI.hide(H);
+LI.show(at);
+if(ap){ap.value=true
+}YDom.removeClass(l,"async")
+}}}else{if(ak.passwordRequired){LI.show(H);
+LI.hide(at);
+if(ap){ap.value=false
+}}else{LI.hide(H);
+LI.show(at);
+if(ap){ap.value=true
+}}}if(ak.notSupported){x();
+return
+}if(ak.showPartnersNotice){LI.show(N.formDisclaimerMessageID)
+}else{LI.hide(N.formDisclaimerMessageID)
+}if(ak.rateLimit){c(N.loginLimitMessage);
+return
+}if(!N.hasWebmailField&&(ak.WEBMAIL_ADDRESS||ak.WEBMAIL_ADDRESS==="")){x();
+return
+}if(ak.ZEPPELINX_ROUTING){aw.value=ak.ZEPPELINX_ROUTING;
+au.value=ak.ZEPPELINX_ROUTING
+}else{YDom.setAttribute(aw,"value","false");
+YDom.setAttribute(au,"value","false")
+}if(N.isNewAddConnectionsFlow){if(ar){E=G
+}}Q.fire(ak);
+if(LI.Events&&!N.isGlobalNav){LI.Events.fire("zeppelin-form-email-resolved",ak,l,av)
+}z()
+}if(af){ai={"isCustomDomain":false,"type":af,"email":E,"passwordRequired":ad};
+ag(ai)
+}else{aj={custom:{exception:function(){return false
+}},success:ae,failure:function(){ag({error:true})
+}};
+O.disabled=true;
+LI.asyncRequest("GET",N.passwordResolutionUrl+"?email="+E+w(),aj)
+}};
+z=function(){if(ac.value&&((YDom.getStyle(H,"display")!=="none")?m.value:true)&&(h===null||((YDom.getStyle(h,"display")!=="none")?B.value:true))){O.disabled=false
+}else{O.disabled=true
+}};
+d=ac.value;
+if(!N.skipInitialResolve&&F(ac)){E=ac.value;
+T(N)
+}else{if(N.hidePasswordInit){LI.hide(H)
+}else{LI.show(H)
+}}YEvent.on(ac,"keyup",function(ad){I(YEvent.getTarget(ad))
+});
+YEvent.on([H,h],"keyup",z);
+z();
+if(LI.Events){LI.Events.bind("zeppelin-form-check-address",function(ad){if(ad===ac){I(ac)
+}})
+}YEvent.on(Y$(".change-email",l,true),"click",function(ad){YEvent.preventDefault(ad);
+YDom.addClass(Y$(".email-display",l,true),"hidden");
+YDom.removeClass(Y$(".email-address",l,true),"hidden");
+if(WebTracking&&N.userChangedEmailTrackingCode){WebTracking.trackUserAction(N.userChangedEmailTrackingCode)
+}})
+}if(L){YEvent.on(Y$(".file_import_opener",l,true),"click",function(){LI.Events.fire("zeppelin-form-jump-to-file-upload")
+})
+}c=function(ah,ad){var af,ae,ag;
+if(L){if(ah!==N.unsupportedEmailTypeMessage){YDom.addClass(L,"hidden")
+}}if(ad){LI.injectAlert(ah,"success",N.formImportMessageID)
+}else{e.fire();
+af=N.formImportMessageID;
+ae=(!af)?YDom.get("global-error"):YDom.get(af);
+ae.innerHTML="";
+ag="<span class='{type}'>{msg}</span>";
+if(n){YDom.setStyle(n,"display","none");
+n=null
+}ah=LI.htmlEncode(ah);
+ae.innerHTML=YAHOO.lang.substitute(ag,{msg:ah,type:"error"});
+WebTracking.trackUserAction("display-error")
+}b.fire()
+};
+function A(){if(g){g.focus();
+setTimeout(function(){g.close()
+},5)
+}}function P(){A();
+c(N.generalErrorMessage);
+WebTracking.trackUserAction("general-error")
+}function C(){A();
+c(N.invalidLoginMessage);
+WebTracking.trackUserAction("invalid-login-error")
+}function j(){A();
+c(N.noContactsReturnedMessage);
+WebTracking.trackUserAction("no-contacts-returned-error")
+}function x(){if(L){if(aa){aa.innerHTML=""
+}YDom.removeClass(L,"hidden")
+}else{c(N.unsupportedEmailTypeMessage);
+YDom.addClass(ac,W)
+}WebTracking.trackUserAction("email-resolution-unsupported-email-error")
+}function Y(){A();
+c(N.loginLimitMessage);
+WebTracking.trackUserAction("login-limit-error")
+}function V(){var ad=Y$("input",N.webmailAddrElId,true);
+A();
+if(N.webmailAddrElId){if(YDom.getStyle(YDom.get(N.webmailAddrElId),"display")==="none"){c(N.webmailUrlErrorMessage);
+WebTracking.trackUserAction("webmail-url-error");
+LI.show(N.webmailAddrElId);
+if(ad){ad.value=""
+}}else{c(N.userEnteredWebmailUrlErrorMessage);
+WebTracking.trackUserAction("webmail-url-error")
+}}}function p(ad,ae){if(WebTracking){WebTracking.trackUserAction("add_conn_client_success",{origin:ae,event:ad})
+}if(N.successMonitorUrl){var af=l[N.referrerFieldName].value;
+LI.asyncRequest("POST",N.successMonitorUrl,{custom:{error:function(ag){},exception:function(){return false
+}}},"referrer="+af)
+}}function o(ai,ae){A();
+var af=l[N.originNameFieldName],ah=(N.providerNameFieldName)?l[N.providerNameFieldName]:YDom.get(N.providerNameFieldID),ag,ad;
+if(af){ad=af.value
+}if(N.authOnly&&N.authOnlySuccessUrl!==""){p("auth_only",ad);
+window.location.href=N.authOnlySuccessUrl;
+return
+}if(ah){ag=ah.value
+}if(N.successUrl.indexOf("?")<0){N.successUrl=N.successUrl+"?"
+}if(ae){p("not_complete",ad);
+window.location.href=N.successUrl+"&"+N.fandangoParam+"="+ae+"&"+N.importerProviderParam+"="+ag;
+return
+}p("success",ad);
+window.location.href=N.successUrl+(ai?"&batchID="+ai:"")+(ag?"&"+N.importerProviderParam+"="+ag:"")+(ad?"&origin="+ad:"")
+}function K(){return N.authOnly
+}return{overrideDisplayMsg:function(ad){c=ad
+},overrideGetExtraResolveEmailParams:function(ad){w=ad
+},showGeneralError:P,showBadLoginError:C,showUnsupportedEmailError:x,showLoginLimitError:Y,showNoContactsReturnedError:j,showWebmailUrlErrorMessage:V,adjustPopupSize:a,openPopup:k,success:o,errorEvent:e,emailResolvedEvent:Q,displayMsgEvent:b,isAuthOnly:K,closePopup:true}
+};(function(){YEvent.onDOMReady(function(){var d=document.getElementById("benefitsContinue");
+var b=document.forms["address-book-import-form"].elements["email"];
+var e=document.getElementById("resolve-btn");
+YEvent.on(d,"click",function(g){if(b.value!=""){var f=document.getElementById("password-nWMIForm");
+var h=document.getElementById("pswd-div");
+if(h.style.display=="none"||f.value!==""){e.click()
+}}});
+var c=document.getElementById("skipButton");
+YEvent.on(c,"click",function(f){a()
+})
+});
+function a(){var b=document.getElementById("benefitsContinue").offsetWidth;
+if(b!=0){document.getElementById("inviterInnerDiv").style.backgroundPosition=(b-12)/2+"px 0"
+}}})();(function(){if(LI.BalloonCalloutManager!==undefined){return
+}LI.define("BalloonCalloutManager");
+LI.BalloonCalloutManager=(function(){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/util/BalloonCallout.js")
+}var f=500,p=f,d=100,u="callout-overlay",y="callout-",n='<span class="callout-arrow"></span>',h={},j={zIndex:10,constraintoviewport:true},v=null,A=false,i=null,l=null,m=null,c=false,s={},g=new YAHOO.util.KeyListener(document,{keys:27},{fn:function(){if(i){i.close(null)
+}}});
+var b=function(C,B){h[C]=B
+};
+var x=function(B){delete h[B]
+};
+var q=function(){A=true
+};
+var r=function(){A=false;
+k()
+};
+var w=function(J){var G=J.config,I,D;
+if(m){window.clearTimeout(m);
+m=null;
+i=null;
+YDom.removeClass(l,"shown")
+}if(i){i.close()
+}i=J;
+if(G.relativeToTrigger===true){v.cfg.setProperty("constraintoviewport",false)
+}if(G.zIndex!==null&&G.zIndex!==undefined){v.cfg.setProperty("zIndex",G.zIndex)
+}f=G.persist?d:p;
+YDom.setStyle(l,"width",G.width);
+l.className=[G.type," ",y,G.orientation," ",G.id].join("");
+if(!G.cacheCalloutContent&&G.id){v.setBody(document.getElementById(G.id).innerHTML+n)
+}else{v.setBody(G.content+n)
+}v.render(document.body);
+v.cfg.setProperty("context",[J.el,G.overlayCorner,G.contextCorner]);
+l.dimensions=o(l);
+J.el.dimensions=o(J.el);
+I=G.orientation.split("-");
+D=s[I[0]](J.el,l,I);
+D.dx+=G.offsetX;
+D.dy+=G.offsetY;
+YDom.setXY(l,[l.dimensions.x+D.dx,l.dimensions.y+D.dy]);
+if(YAHOO.env.ua.ie===6){v.moveTo([l.dimensions.x+D.dx,l.dimensions.y+D.dy])
+}YDom.addClass(l,"shown");
+if(G.eventsOnInternalElements){var C=G.eventsOnInternalElements;
+if(C.elementClass&&C.elementClass!==""){var F=YDom.getElementsByClassName(C.elementClass),H=F.length;
+for(var E=0,B;
+E<H;
+E++){B=F[E];
+YEvent.purgeElement(B,false,C.elementEvent);
+YEvent.on(B,C.elementEvent,J[C.elementAction],J,true)
+}}c=true
+}if(G.persist){g.enable()
+}};
+s={top:function(H,C,B,E){var I=H.dimensions||o(H),G=C.dimensions||o(C),D,F;
+E=E||{};
+if(B[0]==="top"){E.dx=I.x+0.5*I.width-(G.x+0.5*G.width);
+E.dy=I.y+I.height-G.y;
+if(B[1]){this[B[1]](H,C,B,E)
+}}else{D=Y$(".callout-arrow",C,true);
+F=o(D);
+F.height=F.height||0;
+E.dy+=(0.5*G.height-0.5*F.height)
+}return E
+},right:function(H,C,B,E){var I=H.dimensions||o(H),G=C.dimensions||o(C),D,F;
+E=E||{};
+if(B[0]==="right"){E.dx=I.x-(G.x+G.width);
+E.dy=I.y+0.5*I.height-(G.y+0.5*G.height);
+if(B[1]){this[B[1]](H,C,B,E)
+}}else{D=Y$(".callout-arrow",C,true);
+F=o(D);
+F.width=F.width||0;
+E.dx+=(-0.5*G.width+0.5*F.width)
+}return E
+},bottom:function(H,C,B,E){var I=H.dimensions||o(H),G=C.dimensions||o(C),D,F;
+E=E||{};
+if(B[0]==="bottom"){E.dx=I.x+0.5*I.width-(G.x+0.5*G.width);
+E.dy=I.y-(G.y+G.height);
+if(B[1]){this[B[1]](H,C,B,E)
+}}else{D=Y$(".callout-arrow",C,true);
+F=o(D);
+F.height=F.height||0;
+E.dy+=(-0.5*G.height+0.5*F.height)
+}return E
+},left:function(H,C,B,E){var I=H.dimensions||o(H),G=C.dimensions||o(C),D,F;
+E=E||{};
+if(B[0]==="left"){E.dx=I.x+I.width-G.x;
+E.dy=I.y+0.5*I.height-(G.y+0.5*G.height);
+if(B[1]){this[B[1]](H,C,B,E)
+}}else{D=Y$(".callout-arrow",C,true);
+F=o(D);
+F.width=F.width||0;
+E.dx+=(0.5*G.width-0.5*F.width)
+}return E
+}};
+var o=function(D){var C=YDom.getXY(D),F,B,E;
+if(!C||!C.length){return{}
+}F=D.getBoundingClientRect();
+E=parseInt(F.right-F.left,10);
+B=parseInt(F.bottom-F.top,10);
+return{height:B,width:E,x:C[0],y:C[1]}
+};
+var z=function(C){var B=i&&!i.isActive();
+if((!A&&B)||C){v.setBody("");
+i=null;
+YDom.removeClass(l,"shown");
+g.disable()
+}};
+var k=function(){if(!m){m=window.setTimeout(function(){window.clearTimeout(m);
+m=null;
+z(false)
+},f)
+}};
+var t=function(){z(true)
+};
+var e=function(){v=new YAHOO.widget.Overlay(u,j);
+v.render(document.body);
+l=YDom.get(u);
+YEvent.on(l,"mouseover",q);
+YEvent.on(l,"mouseout",r);
+if(LI.Events&&typeof LI.Events.trigger==="function"){LI.Events.trigger("LI.BalloonCalloutManager:initialized")
+}};
+var a=function(){return i
+};
+YEvent.onDOMReady(function(){if(YAHOO&&YAHOO.widget&&YAHOO.widget.Overlay){e()
+}else{var B;
+if(!(LI&&LI.UrlPackage&&LI.UrlPackage.containerCore)){throw new Error("The package url for container-core does not exist.")
+}B=LI.UrlPackage.containerCore;
+YAHOO.util.Get.script(B,{onSuccess:e,onFailure:function(){throw new Error("Failed to load dependency: "+B)
+}})
+}});
+return{register:b,destroy:x,overlay:v,show:w,hide:k,showing:a,forceClose:t}
+})()
+})();
+LI.define("BalloonCallout");
+LI.BalloonCallout=function(c,r){var p=LI.BalloonCalloutManager,b=null,f=350,d="hover",a=YDom.get("callout-overlay")||null,m={"left":["tl","tr",5,0],"right":["tr","tl",-5,0],"top":["tl","tl",0,5],"bottom":["bl","tl",0,-5],"top-left":["tl","bl",0,5],"top-right":["tr","br",0,5],"right-top":["tr","tl",-5,0],"right-bottom":["br","bl",-5,0],"bottom-right":["br","tr",0,-5],"bottom-left":["bl","tl",0,-5],"left-bottom":["bl","br",5,0],"left-top":["tl","tr",5,0]},n,k,h,g;
+r=r||{};
+if(c.tagName&&c.tagName.toLowerCase()==="a"&&c.href.indexOf("#")>-1){r.anchor=true;
+r.id=c.href.substring(c.href.indexOf("#")+1)
+}else{r.anchor=false
+}r={anchor:r.anchor,width:r.width||300,id:r.id||"",overlayCorner:r.overlayCorner||null,contextCorner:r.contextCorner||null,orientation:r.orientation||"left-top",content:r.content||null,events:r.events||["mouseover","mouseout"],eventsOnInternalElements:r.eventsOnInternalElements||null,type:r.type||"balloon-callout",offsetX:r.offsetX||0,offsetY:r.offsetY||0,relativeToTrigger:r.relativeToTrigger||false,zIndex:r.zIndex,persist:r.persist||false,delayOpen:r.delayOpen||false,cacheCalloutContent:r.cacheCalloutContent!==undefined?r.cacheCalloutContent:true,toolTipTextAttr:r.toolTipTextAttr||null,openCallback:r.openCallback||null,closeCallback:r.closeCallback||null};
+var o=function(s){YEvent.preventDefault(s);
+if(r.persist){YEvent.stopPropagation(s)
+}};
+var q=function(s){this.persist=true;
+if(YAHOO.util.Dom.hasClass(s.target,"callout-close")){j()
+}};
+var e=function(s){var t=false;
+if(s.button){t=(s.button===2);
+this.persist=t?true:false
+}if(!this.persist){j.call(this,s)
+}else{this.persist=false
+}};
+var i=function(){var t=this;
+this.active=true;
+YDom.addClass(c,d);
+if(g){n=c.title;
+c.title=""
+}function s(){p.show(t);
+t.openEvent.fire();
+if(!a){a=YDom.get("callout-overlay")
+}if(r.persist){YEvent.on(a,"click",q,t,true);
+YEvent.on(document,"click",e,t,true);
+var u=YDom.getElementsByClassName("callout-close",null,a);
+if(u.length>0){u[0].focus()
+}}else{YEvent.removeListener(a,"click",q);
+YEvent.removeListener(document,"click",e)
+}if(r.openCallback&&typeof(r.openCallback)==="function"){r.openCallback(t)
+}}if(r.delayOpen&&!b){b=window.setTimeout(function(){b=null;
+s()
+},f)
+}else{s()
+}};
+var j=function(s){this.active=false;
+this.persist=false;
+YDom.removeClass(c,d);
+if(g){c.title=n
+}if(r.delayOpen&&b){window.clearTimeout(b);
+b=null
+}if(s){p.hide()
+}else{p.forceClose()
+}if(r.persist){YEvent.removeListener(a,"click",q);
+YEvent.removeListener(document,"click",e);
+if(c){c.focus()
+}}if(r.closeCallback&&typeof(r.closeCallback)==="function"){r.closeCallback(self)
+}};
+var l=function(s){this.active=!this.active;
+if(this.active||this!==p.showing()){i.call(this,s)
+}else{if(!r.persist||(r.events[0]!=="mouseover")){j.call(this,s)
+}else{this.active=true
+}}};
+this.isActive=function(){return this.active
+};
+this.destroy=function(){if(r.anchor){YEvent.removeListener(c,"click",o)
+}if(r.persist){YEvent.removeListener(c,r.events[0],l)
+}else{YEvent.removeListener(c,r.events[0],i);
+YEvent.removeListener(c,r.events[1],j)
+}if(r.eventsOnInternalElements){var w=r.eventsOnInternalElements;
+if(w.elementClass&&w.elementClass!==""){var t=YDom.getElementsByClassName(w.elementClass),v=t.length;
+for(var u=0,s;
+u<v;
+u++){s=t[u];
+YEvent.removeListener(s,w.elementEvent,w.elementAction)
+}}}j();
+p.destroy(c.id)
+};
+this.setContent=function(s){if(!s){s=document.getElementById(r.id).innerHTML
+}r.content=s
+};
+if(!r.content){r.content=document.getElementById(r.id);
+if(!r.content){throw"Could not find info element"
+}else{k=r.content.innerHTML;
+if(r.toolTipTextAttr){n=c.getAttribute(r.toolTipTextAttr);
+k=k.replace("__PLACEHOLDER__",LI.htmlEncode(n))
+}r.content=k
+}}if(r.width!=="auto"){r.width+="px"
+}if(r.anchor){YEvent.on(c,"click",o)
+}if(!r.overlayCorner){r.overlayCorner=m[r.orientation][0]
+}if(!r.contextCorner){r.contextCorner=m[r.orientation][1]
+}r.offsetX+=m[r.orientation][2];
+r.offsetY+=m[r.orientation][3];
+this.openEvent=new YAHOO.util.CustomEvent("open");
+YDom.generateId(c,"callout-trigger-");
+g=(r.toolTipTextAttr==="title");
+this.config=r;
+this.el=c;
+this.active=false;
+this.close=j;
+this.open=i;
+this.toggle=l;
+this.persist=false;
+p.register(c.id,this);
+if(r.persist){YEvent.on(c,r.events[0],l,this,true)
+}else{YEvent.on(c,r.events[0],i,this,true);
+YEvent.on(c,r.events[1],j,this,true)
+}};
+LI.Controls.register("LI.BalloonCallout");
+LI.define("BalloonCalloutDelegator");
+LI.BalloonCalloutDelegator=function(c,a){var b={};
+a=a||{};
+a.dataId=a.dataId?("data"+a.dataId):"data-li-tooltip-id";
+function d(g,e){if(e&&!b[e.id]){a.id=g;
+var f=new LI.BalloonCallout(e,a);
+f.toggle();
+b[e.id]=true
+}}YEvent.on(c,"mouseover",function(e){var f=YEvent.getTarget(e),g=YDom.getAttribute(f,a.dataId);
+if(!g&&YDom.getAttribute(f.parentNode,a.dataId)){f=f.parentNode;
+g=YDom.getAttribute(f,a.dataId)
+}if(g){YDom.generateId(f);
+d(g,f);
+YEvent.stopPropagation(e)
+}})
+};(function(){var c="interrupt success-plus success-timeout task-modal task-modeless task-modeless-secondary no-header noheader-modal";
+var b="POST";
+var a="GET";
+var f={autoSize:"no-header task-modeless success-plus success-timeout",modal:"interrupt task-modal noheader-modal",dragNDrop:"task-modeless task-modeless-secondary success-plus success-timeout",docClick:"success-plus success-timeout",timeout:"success-timeout"};
+var g=null;
+var e={or:LI.i18n.get("Dialog-or"),closeThisWindow:LI.i18n.get("Dialog-closeWindow"),cancel:LI.i18n.get("Dialog-cancel"),submit:LI.i18n.get("Dialog-submit"),start:LI.i18n.get("Dialog-start"),end:LI.i18n.get("Dialog-end")};
+LI.Dialog=function(j,i){var h=g||new d();
+g=h;
+if(j){e=(i.i18n)?i.i18n:e;
+i=i||{};
+i.content=i.content||{};
+i.webtrack=i.webtrack||{};
+i={content:{attentionMsg:i.content.attentionMsg||null,successMsg:i.content.successMsg||null,title:i.content.title||null,node:i.content.node||null,url:i.content.url||null,method:(i.content.method===b)?b:a,postData:i.content.postData||"",useCache:i.content.useCache||false,html:i.content.html||null,submitButton:i.content.submitButton||false,dustData:i.content.dustData||null,dustDataUrl:i.content.dustDataUrl||null,dustTemplate:i.content.dustTemplate||null},dependencies:i.dependencies||null,name:i.name||"config.name=not_set",className:i.className||"",type:(i&&i.type&&c.match(i.type))?i.type:"task-modeless",width:(i&&i.width)?parseInt(i.width,10):500,webtrack:{key:i.webtrack.key||null,val:i.webtrack.val||null},container:(i.container)?i.container:null,extra:(i.extra)?i.extra:null,lazyEvent:(i.lazyEvent)?i.lazyEvent:null,stopEvent:(typeof(i.stopEvent)==="undefined")?true:(!!i.stopEvent),showOnlyWhenReady:i.showOnlyWhenReady||false,childTarget:i.childTarget||null,allowMultipleChildren:i.allowMultipleChildren||false,scrollTopOnOpen:(typeof(i.scrollTopOnOpen)==="undefined")?true:(!!i.scrollTopOnOpen),disableFocusOnClose:(!!i.disableFocusOnClose)?i.disableFocusOnClose:false};
+if(i.childTarget){j=Y$(i.childTarget,j,!i.allowMultipleChildren)||j
+}YEvent.on(j,"click",g.open,i);
+if(i.lazyEvent){g.open(i.lazyEvent,i)
+}}return g
+};
+function d(){var O;
+var y;
+var D=null,q=null,H=null;
+var A=parseInt(YDom.getStyle("body","padding-right"),10);
+var w=document.createElement("DIV");
+var I=document.createElement("DIV");
+I.id="dialog-place-holder";
+var p=new YAHOO.util.CustomEvent("close");
+var r=new YAHOO.util.CustomEvent("open");
+var j=new YAHOO.util.CustomEvent("beforeOpen");
+var z=new YAHOO.util.CustomEvent("submit");
+var n=new YAHOO.util.CustomEvent("swap");
+var B=new YAHOO.util.CustomEvent("contentChange");
+var E={};
+function h(){if(O.container){var Q=YDom.getRegion(O.container);
+return Q.width
+}else{return(YDom.getViewportWidth()+30)
+}}function J(Y){var X=(Y&&Y.type==="click"||(Y==="keyPressed"||Y==="timer"||Y==="selfClose")),S=Y$("#dialog-wrapper iframe"),Q=YDom.get("body"),V=(Q)?Q.getElementsByTagName("a")[0]:document.getElementsByTagName("a")[1];
+if(X){if(S.length){LI.hide(S)
+}L();
+var T=YDom.get("dialog-wrapper");
+if(!T){return
+}var R=Y$(".dialog-content",T,true);
+if(R){R.innerHTML=""
+}l();
+YEvent.removeListener(window,"resize",m);
+document.body.removeChild(T);
+YDom.removeClass(document.body,"dialog-mask-active");
+YDom.removeClass(document.body,"dialog-hide-select");
+t.disable();
+YDom.setStyle("body","padding-right",A+"px");
+YDom.setStyle([YDom.get("header"),YDom.get("footer")],"margin-right","auto");
+YDom.setStyle(document.getElementsByTagName("HTML")[0],"overflow","");
+if(q){YEvent.removeListener(document,"click",J);
+q=null
+}if(D){clearTimeout(D);
+D=null
+}if(!O.disableFocusOnClose){if(y&&y.focus){try{y.focus()
+}catch(U){try{V.focus()
+}catch(W){}}}else{if(V){try{V.focus()
+}catch(U){}}}}}YEvent.removeListener(document,"focusin",G);
+return X
+}var t=new YAHOO.util.KeyListener(document,{keys:27},{fn:J});
+function F(R){O=R;
+var T,S,Q="&nbsp";
+if(O.content){if(O.content.title){T=O.content.title
+}else{if(O.content.node){S=Y$(".dialog-title",O.content.node,true);
+if(S){T=S.innerHTML;
+YDom.setStyle(S,"display","none")
+}}}}if(!T){T=Q
+}w.innerHTML=YAHOO.lang.substitute(['<div class="dialog-window">','<span class="dialog-a11y-hidden">{start}</span>','<div class="dialog-title"><button class="dialog-close" title="{closeWindow}"></button><h3 id="li-dialog-aria-label" class="title">{title}</h3></div>','<div class="dialog-body"></div>','<span class="dialog-a11y-hidden">{end}</span>',"</div>"].join(""),{title:T.replace(/</g,"&lt;").replace(/>/g,"&gt;"),closeWindow:e.closeThisWindow,start:e.start,end:e.end})
+}function k(Q){var R=YEvent.getTarget(Q);
+if(YDom.hasClass(R,"dialog-close")&&!R.disabled){var S=J(Q);
+if(S){YEvent.preventDefault(Q);
+p.fire(R,H.name,H.extra)
+}}else{if(YDom.hasClass(R,"dialog-submit")||(R.tagName==="INPUT"&&R.type&&R.type==="submit")){if(YDom.hasClass(R,"dialog-submit-suppress")){YEvent.preventDefault(Q)
+}z.fire(R,H.name,H.extra)
+}else{if(YDom.hasClass(R,"dialog-mask")&&f.modal.match(H.type)){YEvent.preventDefault(Q);
+J(Q);
+p.fire(R,H.name,H.extra)
+}}}}YEvent.on(w,"click",k);
+function P(Q){var S='<p class="dialog-close">{closeWindow}</p>';
+var R='<input class="btn-primary" type="submit" value="{submit}"> {cancel}';
+return YAHOO.lang.substitute(['<div class="dialog-message">{message}</div>','<div class="dialog-content">{content}</div>','<div class="dialog-actions">',(Q&&Q.content&&Q.content.submitButton)?R:"",(Q&&Q.content&&Q.content.closeMessage)?S:"","</div>"].join(""),{cancel:e.or+' <span class="dialog-cancel dialog-close">'+e.cancel+"</span>",closeWindow:'<span class="dialog-cancel dialog-close">'+e.closeThisWindow+"</span>",message:(Q&&Q.content&&Q.content.msg)?"<p>"+Q.content.msg+"</p>":"",submit:(Q&&Q.content&&Q.content.submitButton!==true)?Q.content.submitButton:e.submit})
+}function C(){YEvent.on(Y$(".dialog-title",w,true),"mousedown",function(Z){if(!YDom.hasClass(YEvent.getTarget(Z),"dialog-close")){T(Z)
+}});
+var X={};
+var W={};
+var Q=0,U=0;
+var V=YDom.get("dialog-wrapper");
+function T(Z){var aa=parseInt(YDom.getStyle(V,"width"),10)||0;
+var ab=parseInt(YDom.getStyle(V,"height"),10)||0;
+YDom.addClass(document.body,"dragging");
+X={x:Z.clientX,y:Z.clientY};
+W.left=W.left||parseInt(YDom.getStyle(V,"left"),10)||0;
+W.top=W.top||parseInt(YDom.getStyle(V,"top"),10)||0;
+Q=YDom.getDocumentWidth()-aa;
+U=YDom.getDocumentHeight()-ab;
+YEvent.on(document,"mouseup",S);
+YEvent.on(document,"mousemove",Y);
+R(true);
+YEvent.stopEvent(Z)
+}function Y(Z){W.left+=Z.clientX-X.x;
+W.top+=Z.clientY-X.y;
+W.left=Math.min(Math.max(W.left,0),Q);
+W.top=Math.min(Math.max(W.top,0),U);
+YDom.setStyle(V,"left",W.left+"px");
+YDom.setStyle(V,"top",W.top+"px");
+X={x:Z.clientX,y:Z.clientY}
+}function S(){YDom.removeClass(document.body,"dragging");
+YEvent.removeListener(document,"mouseup",S);
+YEvent.removeListener(document,"mousemove",Y);
+R(false)
+}function R(Z){if(Z){document.body.ondrag=document.body.onselectstart=function(){return false
+};
+document.body.style.MozUserSelect="none"
+}else{document.body.ondrag=document.body.onselectstart=null;
+document.body.style.MozUserSelect=""
+}}}function v(R){var T=O.content.method,S,Q;
+YAHOO.util.Connect.initHeader("X-IsDialog","1");
+S={success:function(U){if(H.showOnlyWhenReady){YDom.setStyle(w,"visibility","")
+}var V=Y$(".dialog-body",w,true);
+YDom.removeClass(V,"dialog-body-loading");
+if(!U){x();
+return false
+}if(U&&U.responseText){var Y=U.getResponseHeader["Content-Type"];
+if(Y&&Y.indexOf("application/json")>-1){var X=LI.parseJSON(U.responseText);
+u({content:{html:X.html}})
+}else{var W=YAHOO.lang.trim(U.responseText);
+if(W.indexOf("<!DOCTYPE")===0||W.indexOf("<html")===0){x()
+}else{u({content:{html:W}})
+}}}},failure:function(){x()
+},timeout:15000};
+if(T===b){Q=O.content.postData;
+YAHOO.util.Connect.asyncRequest(b,R,S,Q)
+}else{YAHOO.util.Connect.asyncRequest(a,R,S)
+}}function x(){LI.Dialog().close();
+if(!H.showOnlyWhenReady){LI.injectAlert(LI.i18n.get("Dialog-error-generic"),"error")
+}}function o(Q,R){LI.asyncRequest(a,Q,{success:function(S){N(S.responseText,R)
+},failure:x})
+}function N(R,S){dust.render(S||O.content.dustTemplate,R,function Q(U,T){if(U){x()
+}else{YDom.removeClass(Y$(".dialog-body",w,true),"dialog-body-loading");
+u({content:{html:T,attentionMsg:O.content.attentionMsg,successMsg:O.content.successMsg}})
+}})
+}function m(Q){if(f.modal.match(O.type)){if(YAHOO.env.ua.ie&&YAHOO.env.ua.ie<7){var U=YDom.getClientRegion();
+YDom.setStyle(w,"height",(U.bottom-U.top)+"px")
+}}else{var S=Y$(".dialog-window",w,true),T=YDom.get("dialog-wrapper"),R=parseInt(YDom.getStyle(S,"width"),10);
+YDom.setStyle(T,"left",(h()-R)/2+"px");
+YDom.setStyle(T,"top",YDom.getDocumentScrollTop()+105+"px")
+}}function M(ac,S){var U=(ac===null||typeof ac==="boolean")?"publicAPI":YEvent.getTarget(ac),ab;
+if(YDom.inDocument("dialog-wrapper")&&(U!==y||U==="publicAPI")){J("selfClose")
+}S.className=S.className||"";
+var X=LI.DialogRetrofitV2Enabled||false;
+if(X&&(S.className.split(" ").indexOf("dialog-v2")==-1)){S.className+=" dialog-v2-retrofit"
+}H=S;
+var Z=null;
+if(typeof S.i18n==="object"){Z={};
+YAHOO.lang.augmentObject(Z,e);
+YAHOO.lang.augmentObject(e,S.i18n,true)
+}w.className="dialog-mask dialog-"+S.type;
+if(U!==y||U==="publicAPI"){F(S);
+y=U
+}u(S);
+var W=Y$(".dialog-window",w,true);
+YDom.setStyle(W,"width",S.width+"px");
+YDom.setStyle(w,"visibility","hidden");
+var Q=YDom.get("dialog-wrapper")||document.body.appendChild(document.createElement("DIV"));
+Q.id="dialog-wrapper";
+Q.innerHTML="";
+if(S.className!==""){Q.className=S.className
+}YDom.setStyle(Q,"top","");
+YDom.setStyle(Q,"left","");
+Q.appendChild(w);
+LI.Controls.parseFragment(w);
+var R=YDom.getStyle(w,"filter")||null;
+if(f.modal.match(S.type)){ab=YAHOO.util.Region.getRegion(W);
+YDom.setStyle(W,"margin-left",(S.width*-0.5)+"px");
+var Y=YAHOO.util.Region.getRegion(Q);
+if(S.scrollTopOnOpen){YDom.setStyle(document.getElementsByTagName("HTML")[0],"overflow","hidden")
+}var T=YAHOO.util.Region.getRegion(Q).right-Y.right;
+var ad=T+A;
+YDom.addClass(document.body,"dialog-mask-active");
+if(YAHOO.env.ua.ie&&YAHOO.env.ua.ie<7){var V=YDom.getClientRegion();
+YDom.setStyle(w,"height",(V.bottom-V.top)+"px")
+}}else{ab=YAHOO.util.Region.getRegion(w);
+var aa=parseInt(YDom.getStyle(W,"width"),10);
+YDom.setStyle(Q,"left",(h()-aa)/2+"px");
+YDom.setStyle(Q,"top",YDom.getDocumentScrollTop()+105+"px");
+if(f.autoSize.match(S.type)){YDom.addClass(Q,"auto-size")
+}else{YDom.removeClass(Q,"auto-size")
+}if(f.dragNDrop.match(S.type)){C()
+}}YEvent.on(window,"resize",m);
+j.fire(U,S.name,S.extra);
+if(YDom.getLastChild(document.body)!==Q){document.body.appendChild(document.body.removeChild(Q))
+}if(!H.showOnlyWhenReady){YDom.setStyle(w,"visibility","")
+}t.enable();
+if(f.timeout.match(S.type)){D=setTimeout(function(){J("timer")
+},2000)
+}if(f.docClick.match(S.type)){YEvent.on(document,"click",J);
+q=true
+}if((YAHOO.env.ua.ie===6)&&(S.type==="task-modal"||S.type==="interrupt")){document.location.href="#header"
+}if(ac!==null){if(S.stopEvent){YEvent.stopEvent(ac)
+}else{YEvent.preventDefault(ac)
+}}r.fire(U,S.name,S.extra);
+if(S.webtrack&&S.webtrack.key&&typeof(WebTracking)!=="undefined"){WebTracking.trackUserAction(S.webtrack.key,S.webtrack.val)
+}if(Z){e=Z
+}s();
+if(S.type==="task-modal"){YEvent.addListener(document,"focus",G)
+}}function G(Q){YEvent.stopEvent(Q);
+var R=YEvent.getTarget(Q);
+if(!YDom.isAncestor(w,R)){w.focus()
+}}function s(){if(!w){return
+}YDom.setAttribute(w,"aria-labelledby","li-dialog-aria-label");
+w.tabIndex=-1;
+w.focus()
+}function L(){var Q=YDom.getFirstChild(Y$(".dialog-content",w,true));
+if(!Q){return
+}if(YDom.inDocument(I)){I.parentNode.replaceChild(Q,I)
+}else{if(H.content&&(H.content.url||H.content.dustDataUrl)){E[H.content.url||H.content.dustDataUrl]=Q.parentNode.removeChild(Q)
+}}}function K(R,Q,S){S=S||Y$(".dialog-message",w,true);
+Q=(Q)?Q:"attention";
+S.innerHTML="<p>"+(R)+"</p>";
+YDom.addClass(S,"alert");
+YDom.removeClass(S,"attention");
+YDom.removeClass(S,"success");
+YDom.removeClass(S,"error");
+YDom.addClass(S,Q);
+YDom.setStyle(S,"display","")
+}function l(Q){Q=Q||Y$(".dialog-message",w,true);
+if(Q){Q.innerHTML="";
+LI.hide(Q)
+}}function u(R){var X=(R&&R.content)?R.content:{};
+var Q=Y$(".dialog-body",w,true);
+if(R.dependencies){i(R)
+}else{if((X.url&&(!X.useCache||!E[X.url]))||(X.dustDataUrl&&(!X.useCache||!E[X.dustDataUrl]))){var S=Y$(".dialog-content",w,true);
+if(S){S.innerHTML=""
+}YDom.addClass(Q,"dialog-body-loading");
+if(X.url){v(X.url)
+}else{if(X.dustDataUrl){o(X.dustDataUrl,X.dustTemplate)
+}}}else{if(X.dustData){N(X.dustData,X.dustTemplate)
+}else{if(X.attentionMsg||X.successMsg||X.node||X.html||(X.useCache&&X.url&&E[X.url])||(X.useCache&&X.dustDataUrl&&E[X.dustDataUrl])){var V=function(ad){var af=Y$(".dialog-message",ad,true);
+var ae=Y$(".dialog-content",ad,true);
+var aa=YDom.getNextSibling(ae);
+var ac;
+YDom.setStyle([af,ae,aa],"display","none");
+if(X.attentionMsg||X.successMsg){ae.innerHTML="";
+K((X.attentionMsg||X.successMsg),((X.successMsg)?"success":"attention"),af)
+}if(X.node){var ab=YDom.get(X.node);
+ab.parentNode.replaceChild(I,ab);
+ae.innerHTML="";
+ae.appendChild(ab);
+YDom.setStyle(ae,"display","")
+}else{if(X.html){ae.innerHTML=X.html;
+YDom.setStyle(ae,"display","")
+}else{if(X.useCache&&X.url&&E[X.url]){ae.innerHTML="";
+ae.appendChild(E[X.url]);
+YDom.setStyle(ae,"display","")
+}}}if(R.content&&(R.content.submitButton||R.content.closeMessage)){YDom.setStyle(aa,"display","")
+}LI.Controls.parseFragment(Q);
+ac=Y$("iframe",ae);
+if(ac.length){LI.show(ac)
+}B.fire(H.name,H.extra)
+};
+var Z=P(R);
+var U=YDom.inDocument("dialog-wrapper");
+var T=Q.cloneNode(true);
+var W=Q.parentNode;
+var Y=YDom.getStyle(Q,"height");
+YDom.setStyle(Q,"height",Y);
+L();
+YDom.setStyle(Q,"height","");
+Q.innerHTML=Z;
+V(Q)
+}}}}}function i(V){var X=V.dependencies;
+if(typeof X==="string"){X=LI.Controls.resolveName(X)
+}if(!X){return
+}var Q=(X.jsFiles===undefined),W=(X.cssFiles===undefined),S;
+var U=Y$(".dialog-body",w,true);
+YDom.addClass(U,"dialog-body-loading");
+var T=function(){if(S){return
+}if(Q&&W){S=true;
+YDom.removeClass(U,"dialog-body-loading");
+delete V.dependencies;
+u(V)
+}};
+var R=function(){var Y=['<div class="dialog-container interrupt">','<div class="alert attention"><p><strong>'+LI.i18n.get("Dialog-error-generic")+"</strong></p></div>","</div>"].join(" ");
+u({name:V.name,content:{html:Y,closeMessage:true}})
+};
+if(!Q||!W){if(!Q){YAHOO.util.Get.script(X.jsFiles,{onSuccess:function(){Q=true;
+T()
+},onFailure:function(){R()
+},timeout:1000})
+}if(!W){YAHOO.util.Get.css(X.cssFiles,{onSuccess:function(){W=true;
+T()
+},onFailure:function(){R()
+},timeout:1000})
+}}else{T()
+}}return{contentChangeEvent:B,close:function(){J("selfClose")
+},closeEvent:p,open:function(){var Q,R;
+if(arguments.length===1){Q=null;
+R=arguments[0]
+}else{Q=arguments[0];
+R=arguments[1]
+}M(Q,R)
+},openEvent:r,beforeOpenEvent:j,submitEvent:z,swapEvent:n,swap:function(R){var Q=(H&&H.name)?H.name:"";
+l();
+u(R);
+if(H){n.fire("",Q,H.extra)
+}},injectAlert:K,removeAlert:l,handlesOwnLazyLoading:true}
+}}());
+YAHOO.register("LI.Dialog",LI.Dialog,{});

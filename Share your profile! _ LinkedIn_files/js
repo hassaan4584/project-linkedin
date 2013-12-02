@@ -1,0 +1,114 @@
+LI.define("Genie");
+LI.Genie=function(c,p){var q="oid_cb_"+YDom.generateId().replace(/[^a-z]/i,"_"),r=q+"_allow",s=q+"_deny",n=q+"_error",l=q+"_close",d=q+"_scope",i={},k=c.tagName.toLowerCase(),a=this,m=false,b=null,h,e,j,f;
+p=p||{};
+p={url:p.url||null,handleClickManual:p.handleClickManual||null,onAllow:p.onAllow||function(){},onDeny:p.onDeny||function(){},onError:p.onError||function(){},onClose:p.onClose||function(){},scope:p.scope||window,popupWidth:p.popupWidth||790,popupHeight:p.popupHeight||580,obj:p.obj||{}};
+if(!p.url){if(k=="a"){p.url=c.href
+}else{throw new Error("No URL was supplied and no URL was found in the control.")
+}}i=YAHOO.lang.JSON.stringify({onAllow:r,onDeny:s,onError:n,onClose:l,scope:d});
+i=escape(i);
+p.url=p.url+"&cb="+i;
+f=function(u){var t=u;
+if(typeof(u)=="string"){t=LI.Controls.resolveName(u)
+}return t
+};
+p.onAllow=f(p.onAllow);
+if(!p.onAllow){throw new Error("onAllow could not be found or resolved")
+}p.onDeny=f(p.onDeny);
+if(!p.onDeny){throw new Error("onDeny could not be found or resolved")
+}p.onError=f(p.onError);
+if(!p.onError){throw new Error("onError could not be found or resolved")
+}p.onClose=f(p.onClose);
+if(!p.onClose){throw new Error("onClose could not be found or resolved")
+}if(p.scope!="window"&&p.scope!=window){p.scope=f(p.scope);
+if(!p.scope){throw new Error("scope could not be found or resolved")
+}}function o(){window[r]=null;
+window[s]=null;
+window[n]=null;
+window[l]=null;
+window[d]=null;
+m=false;
+clearInterval(b);
+b=null
+}j=function(){window[r]=function(t){o();
+p.onAllow.call(p.scope,t,p.obj)
+};
+window[s]=function(t){o();
+p.onDeny.call(p.scope,t,p.obj)
+};
+window[n]=function(t){o();
+p.onError.call(p.scope,t,p.obj)
+};
+window[l]=function(t){o();
+p.onClose.call(p.scope,t,p.obj)
+};
+window[d]=a
+};
+function g(t){YEvent.preventDefault(t);
+j();
+h=window.open(p.url,"genie_popup","width="+p.popupWidth+",height="+p.popupHeight);
+m=true;
+b=setInterval(function(){if(m&&h.closed){o();
+p.onClose.call(p.scope,{},p.obj)
+}},300)
+}if(!p.handleClickManual){YEvent.on(c,"click",g)
+}return{handleClick:g}
+};LI.GenieBroadcast=function(b,a){var c={submitButtonClass:a.submitButtonClass||"broadcast",popupTarget:a.popupTarget||"genie_popup",providerFieldId:a.providerFieldId||"provider",textFieldId:a.textFieldId||"broadcastMessage",urlFieldId:a.urlFieldId||"url",previouslyTetheredFBFieldId:a.previouslyTetheredFBFieldId||"previouslyTetheredFBFieldId",tetherMap:a.tetherMap||{},url:a.url||"",messageParamName:a.messageParamName||"message",providerParamName:a.providerParamName||"provider",urlParamName:a.urlParamName||"url",previouslyTetheredFBParamName:a.previouslyTetheredFBParamName||"previouslyTetheredFB",progressClass:a.progressClass||"btn-progress",completedElPrefix:a.completedElPrefix||"shared-",skipID:a.skipID||"skip",continueID:a.continueID||"continue",importContinueID:a.continueID||"import-continue",urlMap:a.urlMap||{},successUrl:a.successUrl||"",errorMsgMap:a.errorMsgMap||{},buttonClass:a.buttonClass||"btn-icon",doBroadcast:((a.doBroadcast===false)?false:true),showSettings:((a.showSettings===false)?false:true),doImportInvite:((a.doImportInvite===true)?true:false)},f,d,e,h="data-li-service",g=YDom.getElementsByClassName(c.submitButtonClass);
+YEvent.on(YDom.getElementsByClassName(c.submitButtonClass),"click",function(k){YEvent.preventDefault(k);
+if(c.doBroadcast&&YDom.hasClass(YDom.get(c.textFieldId),"invalid")){return
+}var n=YEvent.getTarget(k),m;
+if(!YDom.hasClass(n,c.buttonClass)){n=n.parentNode;
+if(!YDom.getAttribute(n,h)){n=g[0]
+}}m=YDom.getAttribute(n,h);
+if(c.doBroadcast){YDom.get(c.providerFieldId).value=m
+}f=m;
+d=n;
+if(c.tetherMap[m]){if(c.doBroadcast){j(n,m)
+}return
+}else{var l=null;
+if(c.showSettings||c.doImportInvite){LI.GenieBroadcastInstance=LI.Controls.getControl(b,"LI.GenieBroadcast");
+LI.GenieBroadcastInstance.settingsDisplayed=false;
+LI.GenieBroadcastInstance.providerSettingToDisplay=m;
+LI.GenieBroadcastInstance.isWeiboBindingAtReg=m==="WEIBO"&&c.doBroadcast;
+LI.GenieBroadcastInstance.isTencentBindingAtReg=m==="TENCENT"&&c.doBroadcast;
+l=new LI.Genie(n,{url:c.urlMap[m],handleClickManual:true,onAllow:function(o,p){if(c.doBroadcast){j(p.button,p.provider)
+}if(c.successUrl!==""){o.win.location.href=c.successUrl
+}else{o.win.close()
+}},onDeny:function(o,p){o.win.close()
+},onError:function(o,p){if(c.errorMsgMap[m]){LI.injectAlert(c.errorMsgMap[m],"error")
+}o.win.close()
+},onClose:function(o,p){},scope:this,obj:{provider:m,button:n}})
+}else{l=new LI.Genie(n,{url:c.urlMap[m],onAllow:function(o,p){if(c.doBroadcast){j(p.button,p.provider)
+}o.win.close()
+},onDeny:function(o,p){o.win.close()
+},onError:function(o,p){if(!(o&&o.results&&o.results.errorMessage&&o.results.errorMessage.indexOf("user_denied")>-1)){LI.injectAlert(c.errorMsgMap[m],"error")
+}o.win.close()
+},onClose:function(o,p){},scope:this,obj:{provider:m,button:n}})
+}l.handleClick(n)
+}});
+function j(k,m){YDom.get(c.providerFieldId).value=m;
+f=m;
+YDom.addClass(k,c.progressClass);
+var l={};
+l[c.messageParamName]=YDom.get(c.textFieldId).value;
+l[c.providerParamName]=m;
+l[c.urlParamName]=YDom.get(c.urlFieldId).value;
+l[c.previouslyTetheredFBParamName]=YDom.get(c.previouslyTetheredFBFieldId).value;
+LI.asyncRequest("POST",c.url,{success:function(n){i(n)
+},custom:{error:function(n){YDom.removeClass(d,c.progressClass);
+LI.injectAlert(c.errorMsgMap[m],"error")
+}}},LI.addParams("",l,true));
+return
+}function i(m){LI.removeAlert(null,true);
+LI.hide(d);
+LI.hide(c.skipID);
+if(!e){if(m&&m.responseText&&m.responseText.fd){e=true;
+var k=YDom.get(c.importContinueID);
+var l=k.getAttribute("href");
+l=l.replace("TEST_ID",m.responseText.fd);
+k.setAttribute("href",l);
+e=true;
+LI.show(k)
+}else{LI.show(c.continueID)
+}}LI.show(c.completedElPrefix+f.toLowerCase())
+}return{handleBroadcastComplete:i}
+};

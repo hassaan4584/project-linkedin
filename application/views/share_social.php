@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="ie ie6 lte9 lte8 lte7 os-win"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="ie ie7 lte9 lte8 lte7 os-win"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie ie8 lte9 lte8 os-win"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie ie9 lte9 os-win"> <![endif]-->
+<!--[if gt IE 9]> <html lang="en" class="os-win"> <![endif]-->
+<!--[if !IE]><!-->
+<html class="os-win" lang="en"><!--<![endif]--><head>
+
+
+<base href="<?php echo base_url(); ?>" />
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+
+     
+      
+  
+  
+
+    
+      
+        
+          
+            
+                
+              
+          
+        
+      
+    
+    
+
+
+     
+      
+  
+
+    
+      
+        
+          
+            
+                
+              
+          
+        
+      
+    
+    
+
+
+
+  <meta name="lnkd-track-json-lib" content="https://static.licdn.com/scds/concat/common/js?h=2jds9coeh4w78ed9wblscv68v-eo3jgzogk6v7maxgg86f4u27d">
+  
+
+
+
+
+  
+    <meta name="treeID" content="OKPKVIMFPBMwguGTrioAAA==">
+  
+
+
+
+  <meta name="appName" content="reg">
+
+
+
+
+
+     
+      
+  
+  
+  
+  
+
+    
+      
+        
+          
+            
+                
+                  
+                    <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js_003"></script>
+                  
+                  
+                
+              
+          
+        
+      
+    
+    
+
+
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="description" content="LinkedIn strengthens and extends your existing network of trusted contacts. LinkedIn is a networking tool that helps you discover inside connections to recommended job candidates, industry experts and business partners.">
+ <meta name="pageImpressionID" content="7980215a-b86f-4390-86bc-785a5f17c7a6">
+ <meta name="pageKey" content="reg-broadcast-page">
+ <meta name="analyticsURL" content="/analytics/noauthtracker">
+ 
+<link rel="apple-touch-icon-precomposed" href="https://www.linkedin.com/img/icon/apple-touch-icon.png">
+<!--[if lte IE 8]>
+  <link rel="shortcut icon" href="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/16x16/favicon.ico">
+<![endif]-->
+<!--[if IE 9]>
+  <link rel="shortcut icon" href="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico">
+<![endif]-->
+<link rel="icon" href="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico">
+
+
+<meta name="msapplication-TileImage" content="https://static.licdn.com/scds/common/u/images/logos/linkedin/logo-in-win8-tile-144_v1.png">
+<meta name="msapplication-TileColor" content="#0077B5">
+<meta name="application-name" content="LinkedIn">
+ <link rel="openid.server" href="https://www.linkedin.com/uas/openid/authorize">
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <link rel="stylesheet" type="text/css" href="Share%20your%20profile%21%20_%20LinkedIn_files/css_002.css">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+      
+    
+  
+      
+      
+ 
+      
+        
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+    
+  
+
+
+
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js_002"></script>
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script type="text/javascript">
+ LI.define('UrlPackage');
+ LI.UrlPackage.containerCore = 
+ ["https://static.licdn.com/scds/concat/common/js?h=d7z5zqt26qe7ht91f8494hqx5"]
+ [0];
+ </script>
+
+ 
+ 
+ 
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+      
+    
+  
+      
+      
+ 
+      
+        
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+
+
+
+
+
+
+
+    
+  
+
+
+
+    
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+      
+    
+  
+      
+      
+ 
+      
+        
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+    <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/scds-hashes.js"></script>
+  <script type="text/javascript">
+    LI.JSContentBasePath = "https://static.licdn.com/scds/concat/common/js?v=build-2000_1_31497-prod";
+    LI.CSSContentBasePath = "https://static.licdn.com/scds/concat/common/css?v=build-2000_1_31497-prod";
+    LI.injectRelayHtmlUrl = "https://static.licdn.com/scds/common/u/lib/inject/0.4.2/relay.html";
+    LI.injectRelaySwfUrl = "https://static.licdn.com/scds/common/u/lib/inject/0.4.2/relay.swf";
+    LI.comboBaseUrl = "https://static.licdn.com/scds/concat/common/css?v=build-2000_1_31497-prod";
+    LI.staticUrlHashEnabled = "true";
+  </script>
+
+      
+
+    
+
+  
+
+ 
+ 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+      
+    
+  
+      
+      
+ 
+      
+        
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+
+
+
+
+
+
+
+    
+  
+
+
+  
+      
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js_006"></script>
+ 
+ 
+
+ 
+
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<title>Share your profile! | LinkedIn</title>
+
+
+      
+    
+  
+      
+      
+
+      
+        
+      
+
+
+  
+     
+     
+      
+       
+       
+       
+     
+    
+      
+        
+          
+            
+                
+                  
+                    <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js_004"></script>
+                  
+                  
+                
+              
+          
+        
+      
+    
+    
+    
+
+      
+      
+        
+    
+      
+      
+    
+  
+     
+    
+          
+          
+  
+     
+                    <link rel="stylesheet" type="text/css" href="Share%20your%20profile%21%20_%20LinkedIn_files/css.css">
+    
+     
+
+      
+        
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+     
+      
+      
+     
+    
+      
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript">
+            
+        /* extlib: _geniebroadcast */
+          
+        
+    
+            LI.Controls.addControl('control-http-12119-2630144-1', 'GenieBroadcast', {
+        url: '/reg/broadcast-account?csrfToken=ajax%3A2724388095916685135',
+        messageParamName : 'broadcastMessage',
+        providerParamName : 'provider',
+        urlParamName: 'URL',
+        previouslyTetheredFBParamName: 'previouslyTetheredFB',
+        submitButtonClass : 'twitter',
+        popupTarget: 'genie_popup',
+        providerFieldId: 'provider-broadcastAccountForm',
+        textFieldId: 'broadcastMessage-broadcastAccountForm',
+        urlFieldId: 'URL-broadcastAccountForm',
+        previouslyTetheredFBFieldId: 'previouslyTetheredFB-broadcastAccountForm',
+        tetherMap: {
+          'TWITTER' : false,
+        },
+        urlMap: {
+          'TWITTER': '/genie/sesame?_ed=0_30BFu12rwGr6Tae002qQpd6B78ZnhHLwXhENwxMrTiNwrTMq056K_OdEcDgH0Qi1qEqTXneNviiZegWfYfPv3KJguFSGzsHZUADxCwM6MBP0l5nI7t_9V-36b41756iDHVoKQYOY8ICqqQXLTbplhb&csrfToken=ajax%3A2724388095916685135',
+        },
+          successUrl: '/reg/twitter-auth-success',
+        errorMsgMap: {
+          'TWITTER' : 'Your profile has not been shared on Twitter. Please try again.',
+        },
+        buttonClass: 'btn-icon'
+        });
+          
+
+            
+    
+            LI.Controls.addControl('control-http-12119-2630144-2', 'GenieBroadcast', {
+        url: '/reg/broadcast-account?csrfToken=ajax%3A2724388095916685135',
+        messageParamName : 'broadcastMessage',
+        providerParamName : 'provider',
+        urlParamName: 'URL',
+        previouslyTetheredFBParamName: 'previouslyTetheredFB',
+        submitButtonClass : 'facebook',
+        popupTarget: 'genie_popup',
+        providerFieldId: 'provider-broadcastAccountForm',
+        textFieldId: 'broadcastMessage-broadcastAccountForm',
+        urlFieldId: 'URL-broadcastAccountForm',
+        previouslyTetheredFBFieldId: 'previouslyTetheredFB-broadcastAccountForm',
+        showSettings: false,
+        tetherMap: {
+          'FACEBOOK' : false,
+        },
+        urlMap: {
+          'FACEBOOK': '/genie/sesame?_ed=0_M9qnwgCUaCNJOzw00CJ6jhFhOflQqXUeQqco8s6ZQIo6ZY6w1hHLYzq39QaMd4wmG6J-RPInQALjAez_3YTMXHk7GtGETa_u99UpEc1I9sOycJ-YFr-G9KRBPPqvcL8U9kScwxBsrDl1DRUqiA77C8x4EeAAraWvU5aV1mHwUZQsse0IEaYH3is45YI0K5vJ&csrfToken=ajax%3A2724388095916685135',
+        },
+        errorMsgMap: {
+          'FACEBOOK' : 'Your profile has not been shared on Facebook. Please try again.',
+        },
+        buttonClass: 'btn-icon'
+        });
+          
+
+            
+        /* extlib: _checktextarea */
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+LI.i18n.register( 'CheckTextarea-error', 'You have exceeded the maximum length by <strong>{0}<\/strong> character(s).' );
+LI.i18n.register( 'CheckTextarea-empty',   'You may add up to <strong>{0}<\/strong> characters.' );
+LI.i18n.register( 'CheckTextarea-full', 'You may not add more characters.' );
+LI.i18n.register( 'CheckTextarea-countdown',   'You may add up to <strong>{0}<\/strong> more characters.' );
+LI.i18n.register( 'CheckTextarea-countdown-file-sharing',   '{1} character(s).' );
+LI.i18n.register( 'CheckTextarea-twitter-under', 'Count: <strong>{1}<\/strong>' );
+LI.i18n.register( 'CheckTextarea-twitter-over',   'Count: <strong>{1}<\/strong> (Only 140 characters will show on Twitter)' );
+LI.i18n.register( 'CheckTextarea-microblog-over',   'Count: <strong>{1}<\/strong> (Only 140 characters will show on your microblog)' );
+LI.i18n.register( 'CheckTextarea-twitter-over-file-sharing',   '{1} character(s): Only the first 140 characters will be shown on Twitter.' );
+
+        
+    
+            LI.Controls.addControl('control-http-12119-2630145-3', 'CheckTextarea', {
+              maxLength : 140,
+              validate: true,
+              showMsgOn: 'load',
+              useTwitterCountdown: true,
+              grow: { auto: true }
+            });
+          </script><script src="Share%20your%20profile%21%20_%20LinkedIn_files/ga.js" type="text/javascript" id="yui__dyn_0"></script><script src="Share%20your%20profile%21%20_%20LinkedIn_files/quant.js" type="text/javascript" id="yui__dyn_1"></script><script src="Share%20your%20profile%21%20_%20LinkedIn_files/beacon.js" type="text/javascript" id="yui__dyn_2"></script></head>
+      
+      
+        
+    
+    
+
+
+
+      
+        
+    
+      
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+<body class="en member v2 guest chrome-v5 chrome-v5-responsive sticky-bg js " id="pagekey-reg-broadcast-page">
+
+ 
+ 
+ <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ 
+ 
+
+
+
+
+
+
+
+ <input id="inSlowConfig" value="false" type="hidden">
+
+<script type="text/javascript">document.body.className += " js ";</script>
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+<div id="header" class="member">
+ <div class="wrapper">
+ <div id="nav-primary">
+ <div class="wrapper">
+ <div class="logo" id="logo-linkedin">
+ <img src="Share%20your%20profile%21%20_%20LinkedIn_files/logo_linkedin_92x22.png" alt="LinkedIn" height="22" width="92">
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+ 
+ 
+<div id="body">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+
+ 
+ 
+ <div class="wrapper">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+
+<div id="global-error">
+</div>
+
+
+
+
+        
+      
+    
+  
+      
+      
+
+      
+        
+      
+
+
+
+      
+      
+        
+    
+    
+
+
+<div class="progress-container">
+      <h1>Congratulations! You've just created your professional profile.</h1>
+        <p class="progress">
+          <span class="summary">Step <strong>4</strong> of <strong>7</strong></span>
+          <span class="progress-meter" title="57% Complete"><span class="has-progress" style="width:57%"></span></span>
+        </p>
+</div>
+
+  <div id="main" class="broadcast-new-account">
+
+<div id="control_gen_1" class="mini-profile">
+
+
+    <h1><?php echo $firstName.' '.$lastName;?>
+    </h1>
+    <p class="title"><?php echo $jobTitle.' at '.$companyName; ?></p>
+      <dl class="demographic-info adr">
+          <dt>Location</dt>
+          <dd class="location"><span class="locality"><?php $countryName;?></span></dd>
+      </dl>
+</div>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+
+   
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+  
+    
+  
+
+
+          <script id="controlinit-http-12119-2630144-1" type="text/javascript+initialized" class="li-control">
+            
+        /* extlib: _geniebroadcast */
+          
+        
+    
+            LI.Controls.addControl('control-http-12119-2630144-1', 'GenieBroadcast', {
+        url: '/reg/broadcast-account?csrfToken=ajax%3A2724388095916685135',
+        messageParamName : 'broadcastMessage',
+        providerParamName : 'provider',
+        urlParamName: 'URL',
+        previouslyTetheredFBParamName: 'previouslyTetheredFB',
+        submitButtonClass : 'twitter',
+        popupTarget: 'genie_popup',
+        providerFieldId: 'provider-broadcastAccountForm',
+        textFieldId: 'broadcastMessage-broadcastAccountForm',
+        urlFieldId: 'URL-broadcastAccountForm',
+        previouslyTetheredFBFieldId: 'previouslyTetheredFB-broadcastAccountForm',
+        tetherMap: {
+          'TWITTER' : false,
+        },
+        urlMap: {
+          'TWITTER': '/genie/sesame?_ed=0_30BFu12rwGr6Tae002qQpd6B78ZnhHLwXhENwxMrTiNwrTMq056K_OdEcDgH0Qi1qEqTXneNviiZegWfYfPv3KJguFSGzsHZUADxCwM6MBP0l5nI7t_9V-36b41756iDHVoKQYOY8ICqqQXLTbplhb&csrfToken=ajax%3A2724388095916685135',
+        },
+          successUrl: '/reg/twitter-auth-success',
+        errorMsgMap: {
+          'TWITTER' : 'Your profile has not been shared on Twitter. Please try again.',
+        },
+        buttonClass: 'btn-icon'
+        });
+          </script>
+        
+    
+
+    
+    
+      
+      
+        <script>
+              <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+          <script id="controlinit-http-12119-2630144-2" type="text/javascript+initialized" class="li-control">
+            
+    
+            LI.Controls.addControl('control-http-12119-2630144-2', 'GenieBroadcast', {
+        url: '/reg/broadcast-account?csrfToken=ajax%3A2724388095916685135',
+        messageParamName : 'broadcastMessage',
+        providerParamName : 'provider',
+        urlParamName: 'URL',
+        previouslyTetheredFBParamName: 'previouslyTetheredFB',
+        submitButtonClass : 'facebook',
+        popupTarget: 'genie_popup',
+        providerFieldId: 'provider-broadcastAccountForm',
+        textFieldId: 'broadcastMessage-broadcastAccountForm',
+        urlFieldId: 'URL-broadcastAccountForm',
+        previouslyTetheredFBFieldId: 'previouslyTetheredFB-broadcastAccountForm',
+        showSettings: false,
+        tetherMap: {
+          'FACEBOOK' : false,
+        },
+        urlMap: {
+          'FACEBOOK': '/genie/sesame?_ed=0_M9qnwgCUaCNJOzw00CJ6jhFhOflQqXUeQqco8s6ZQIo6ZY6w1hHLYzq39QaMd4wmG6J-RPInQALjAez_3YTMXHk7GtGETa_u99UpEc1I9sOycJ-YFr-G9KRBPPqvcL8U9kScwxBsrDl1DRUqiA77C8x4EeAAraWvU5aV1mHwUZQsse0IEaYH3is45YI0K5vJ&csrfToken=ajax%3A2724388095916685135',
+        },
+        errorMsgMap: {
+          'FACEBOOK' : 'Your profile has not been shared on Facebook. Please try again.',
+        },
+        buttonClass: 'btn-icon'
+        });
+          </script>
+        
+    
+
+
+
+  
+      
+        <form action="/reg/broadcast-account" method="POST" name="broadcastAccountForm" novalidate="novalidate" class="broadcast-form" target="genie_popup">
+       
+       
+    
+      <span class="error" id="broadcastMessage-broadcastAccountForm-error"></span>
+      <div class="broadcast-message">
+        
+          <textarea class="" data-base-height="35" name="broadcastMessage" id="broadcastMessage-broadcastAccountForm" maxlength="420">I just joined LinkedIn and created my professional profile. Join my network. http://lnkd.in/bpu9vhj</textarea><p id="warningbroadcastMessage-broadcastAccountForm" style="display: block;" class="check-textarea-message info">Count: <strong>107</strong></p>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+          <script id="controlinit-http-12119-2630145-3" type="text/javascript+initialized" class="li-control">
+            
+        /* extlib: _checktextarea */
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+LI.i18n.register( 'CheckTextarea-error', 'You have exceeded the maximum length by <strong>{0}<\/strong> character(s).' );
+LI.i18n.register( 'CheckTextarea-empty',   'You may add up to <strong>{0}<\/strong> characters.' );
+LI.i18n.register( 'CheckTextarea-full', 'You may not add more characters.' );
+LI.i18n.register( 'CheckTextarea-countdown',   'You may add up to <strong>{0}<\/strong> more characters.' );
+LI.i18n.register( 'CheckTextarea-countdown-file-sharing',   '{1} character(s).' );
+LI.i18n.register( 'CheckTextarea-twitter-under', 'Count: <strong>{1}<\/strong>' );
+LI.i18n.register( 'CheckTextarea-twitter-over',   'Count: <strong>{1}<\/strong> (Only 140 characters will show on Twitter)' );
+LI.i18n.register( 'CheckTextarea-microblog-over',   'Count: <strong>{1}<\/strong> (Only 140 characters will show on your microblog)' );
+LI.i18n.register( 'CheckTextarea-twitter-over-file-sharing',   '{1} character(s): Only the first 140 characters will be shown on Twitter.' );
+
+        
+    
+            LI.Controls.addControl('control-http-12119-2630145-3', 'CheckTextarea', {
+              maxLength : 140,
+              validate: true,
+              showMsgOn: 'load',
+              useTwitterCountdown: true,
+              grow: { auto: true }
+            });
+          </script>
+        
+    
+        <p class="public-profile-url">Your profile URL: http://lnkd.in/bpu9vhj</p>
+      </div>
+
+    <p class="actions">
+            <div class="fb-share-button" data-href="http://localhost/Codeigniter-bootstrap--master/index.php/import" data-width="50" data-type="button"><button >Share on Facebook</button></div>
+
+    </p>
+    <a href="http://www.linkedin.com/reg/web-flow?ns=1&amp;flow=1ofgqp7-n0z57x" class="skip" id="skip">
+          Skip this step »
+    </a>
+    <a href="http://www.linkedin.com/reg/web-flow?ns=1&amp;flow=1ofgqp7-n0z57x" id="continue">Continue »</a>
+    <a href="https://www.linkedin.com/reg/fb-import?fd=TEST_ID&amp;flow=1ofgqp7-n0z57x" id="import-continue">Continue »</a>
+  
+      
+     
+          
+          <input name="provider" value="" id="provider-broadcastAccountForm" type="hidden"><input name="URL" value="http://lnkd.in/bpu9vhj" id="URL-broadcastAccountForm" type="hidden"><input name="previouslyTetheredFB" value="false" id="previouslyTetheredFB-broadcastAccountForm" type="hidden"><input name="csrfToken" value="ajax:2724388095916685135" id="csrfToken-broadcastAccountForm" type="hidden"><input name="sourceAlias" value="0_0azPSPCMv8gVV0KYme9EXbZz1ZrOxIFXXFDO6hzIY18" id="sourceAlias-broadcastAccountForm" type="hidden"><input name="flow" value="1ofgqp7-n0z57x" id="flow-broadcastAccountForm" type="hidden">
+          </form>
+        
+      
+    
+</div>
+
+
+     
+      
+  
+  
+  
+
+    
+                    <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js"></script>
+    
+    
+
+
+      
+        
+    
+      
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+</div>
+<script type="text/javascript">LI.Controls.processQueue();</script>
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript">LI.Controls.processQueue();</script>
+      
+        
+    
+    
+
+      
+        
+    
+      
+    
+    
+    
+      
+     
+    
+     
+      
+          
+
+
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<div id="footer">
+ <div class="wrapper">
+ <div id="legal">
+ <p id="copyright">LinkedIn Corporation © 2013</p>
+ <p id="terms-of-use">
+ Commercial use of this site without express authorization is prohibited.
+ </p>
+ </div>
+ </div>
+</div>
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ <script type="text/javascript" src="Share%20your%20profile%21%20_%20LinkedIn_files/js_005"></script>
+ 
+ 
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+      
+    
+  
+      
+      
+
+      
+        
+      
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3242811-1']);
+      _gaq.push(['_setDomainName', '.linkedin.com']);
+      _gaq.push(['_trackPageview', 'reg-broadcast-page']);
+      _gaq.push(['_setVar', 'user']);
+      
+      
+      YEvent.on( window, 'load', function() {
+        YAHOO.util.Get.script("https://ssl.google-analytics.com/ga.js");
+      });
+    </script>
+  
+
+
+
+<script type="text/javascript">
+if ( typeof( WebTracking ) !== 'undefined' ) {
+ WebTracking.saveWebActionTrackURL = "/lite/secure-web-action-track?csrfToken=ajax%3A2724388095916685135";
+}
+</script>
+
+      
+      
+        
+    
+      
+
+          <script id="localChrome"></script>
+      
+    
+  <script type="text/javascript"><!--//<![CDATA[
+
+  LI.define('MbrPic');
+  LI.MbrPic.prototype = {
+    mediaUrl: 'https://media.licdn.com/mpr/mpr/shrink_80_80/fakeID',
+
+    onSaved: function(args) {
+      if (args.success)
+      {
+        YDom.get('mbr-pic').src = mediaUrl.replace("/fakeID", args.picId);
+        LI.injectAlert(data.message, "success");
+      }
+      else
+      {
+        LI.injectAlert(data.message, "attention");
+      }
+      if (args.win && args.win.close) {
+        args.win.close();
+      }
+    }
+  }
+
+  //]]>--></script>
+
+      
+      
+      
+        
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <script type="text/javascript">
+          
+              
+    
+              
+    
+              
+    
+        LI_WCT([
+              "control-http-12119-2630144-1",
+              "control-http-12119-2630144-2",
+              "control-http-12119-2630145-3",
+        ]);
+    
+      </script>
+    
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+<script type="text/javascript">LI.Controls.processQueue();</script>
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+<script type="text/javascript">
+  LI.define('Tracking.Quantcast');
+  LI.Tracking.Quantcast = function() {
+    _qoptions = { qacct:"p-b3sGjMtCFrexE" };
+    YAHOO.util.Get.script( 'https://secure.quantserve.com/quant.js' );
+  };
+  YEvent.on( window, 'load', LI.Tracking.Quantcast);
+</script>
+<noscript>
+  <a href="http://www.quantcast.com/p-b3sGjMtCFrexE" target="_blank"><img src="https://secure.quantserve.com/pixel/p-b3sGjMtCFrexE.gif" style="display: none;" height="1" width="1" alt=""/></a>
+</noscript>
+
+ 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+
+<script type="text/javascript">
+  LI.define('Tracking.Comscore');
+  LI.Tracking.Comscore = function() {
+    YAHOO.util.Get.script( 'https://sb.scorecardresearch.com/beacon.js', {
+      onSuccess: function() {
+        COMSCORE.beacon({ c1:2, c2:6402952, c3:"", c4:"", c5:"", c6:"", c15:"" });
+      }
+    });
+  };
+  YEvent.on( window, 'load', LI.Tracking.Comscore);
+</script>
+<noscript>
+  
+      <img src="https://sb.scorecardresearch.com/b?c1=2&amp;c2=6402952&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" style="display:none" width="0" height="0" alt="" />
+    
+</noscript>
+
+ 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+<script type="text/javascript">
+  YEvent.on( window, 'load', function() {
+    (function () {
+      var protocol = 'https:';
+      var d = new Image(1, 1);
+      d.onerror = d.onload = function () { d.onerror = d.onload = null; };    
+      d.src = [
+        protocol,
+        "//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&si=", 
+        escape(window.location.href), "&rp=", 
+        escape(document.referrer),   
+        "&ts=compact&rnd=", 
+        (new Date()).getTime()
+      ].join('');
+    })();
+  });
+</script>
+<noscript>
+  
+      <img src="https://secure-us.imrworldwide.com/cgi-bin/m?ci=us-603751h&cg=0&cc=1&ts=noscript"
+    width="1" height="1" alt="" style="display:none"/>
+    
+</noscript>
+
+
+ 
+ 
+
+
+
+ 
+
+      
+      
+        
+    
+    
+
+ </body></html>
