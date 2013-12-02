@@ -15,14 +15,14 @@
 		</a>
 	</div>
 	<br/>
-	<div><b>Visit Tutorial: </b><a style="font-size:17px;" href="http://25labs.com/import-gmail-or-google-contacts-using-google-contacts-data-api-3-0-and-oauth-2-0-in-php/" >Import Gmail or Google contacts using Google Contacts Data API and OAuth 2.0 in PHP</a></div>
+	
 	<br/>
 	<div style="padding-left: 50px;">
 <?php
-$client_id='Your Client ID goes here';
-$client_secret='Your Client secret goes here';
-$redirect_uri='Your Redirect URIs goes here';
-$max_results = 25;
+$client_id='379941793106.apps.googleusercontent.com';
+$client_secret='xnzlWcVUezLfbInNUBfmYZPI';
+$redirect_uri='http://localhost/Codeigniter-bootstrap--master-project/oauth/oauth.php';
+$max_results = 150;
  
 $auth_code = $_GET["code"];
  
