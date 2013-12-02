@@ -16,7 +16,7 @@
 
  <link rel="openid.server" href="https://www.linkedin.com/uas/openid/authorize">
  
- <link rel="stylesheet" type="text/css" href="./Build Your Profile   LinkedIn_files/css">
+ <link rel="stylesheet" type="text/css" href="build_profile.css">
  <script type="text/javascript" src="./Build Your Profile   LinkedIn_files/js(1)"></script>
 
 <script src="jquery-1.10.2.min.js"></script>
@@ -51,7 +51,7 @@
                   
                     <script type="text/javascript" src="./Build Your Profile   LinkedIn_files/js(3)"></script>
                   
-                    <link rel="stylesheet" type="text/css" href="./Build Your Profile   LinkedIn_files/css(1)">
+                    <link rel="stylesheet" type="text/css" href="build_profile2.css">
                   
                     <script type="text/javascript" src="./Build Your Profile   LinkedIn_files/js(4)"></script>
 <script type="text/javascript">

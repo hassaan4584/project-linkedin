@@ -17,8 +17,8 @@ class UploadProfileImage extends CI_Controller{
 		{
 			//redirect('what_is_linkedin', 'refresh');
 			//$this->load->view('header_view');
-			$this->load->model('uploadImage_model');
-			$path=$this->uploadImage_model->imagePath();
+			$this->load->model('upload_image_model');
+			$path=$this->upload_image_model->imagePath();
 		
 			//$path='./My Profile  Add Photo   LinkedIn_files/icon_no_photo_no_border_offset_100x100.png';
 
@@ -64,15 +64,15 @@ class UploadProfileImage extends CI_Controller{
 		{
 			$data = array('upload_data' => $this->upload->data());
 
-			$this->load->model('uploadImage_model');
+			$this->load->model('upload_image_model');
 		//echo $this->input->post('path');
-			$this->uploadImage_model->addImagePath();
+			$this->upload_image_model->addImagePath();
 
 
 			//$this->load->view('error', $data);
 		
 			$this->index();
-				//$path=$this->uploadImage_model->imagePath();
+				//$path=$this->upload_image_model->imagePath();
 				//$data['picPath'] = $path;
 				//$this->load->view('upload_profile_image_view', $data);	
 				
