@@ -14,7 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/Codeigniter-bootstrap--master/';
+//$config['base_url']	= 'http://localhost/Codeigniter-bootstrap--master/';
+$config['base_url']	= 'http://project-linkedin.herokuapp.com/';
+
 
 /*
 |--------------------------------------------------------------------------
